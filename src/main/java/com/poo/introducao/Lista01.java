@@ -39,5 +39,22 @@ public class Lista01 {
         System.out.println("Olá, " + nome + " " + sobrenome + " !");
         
     }
+
+    void ex3(){
+        double valorReais;
+        double valorDolar;
+
+        System.out.println("Conversor Real R$ - Dólar $ ");
+        System.out.print("Valor em R$: ");
+        Scanner sc = new Scanner(System.in);
+
+        valorReais = sc.nextDouble();
+
+        valorDolar = valorReais / 5.25;
+
+        System.out.println("------------------");
+        System.out.println("Valor em $: " + valorDolar);
+
+    }
 }
 
