@@ -53,7 +53,7 @@ public class Lista01 {
         valorDolar = valorReais / 5.25;
 
         System.out.println("------------------");
-        System.out.println("Valor em $: " + valorDolar);
+        System.out.println("Valor em $: " + String.format("%.2f", valorDolar));
         sc.close();
     }
 
