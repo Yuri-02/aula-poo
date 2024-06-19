@@ -201,4 +201,30 @@ public class Lista02 {
         System.out.println("----------------------------------");
         sc.close();
     }
+
+    void ex7(){
+        int divisor;
+        int dividendo;
+
+        System.out.println("-------------------------------");
+        System.out.println("Identificador de divisibilidade");
+        System.out.println("-------------------------------");
+        System.out.print("Digite um dividendo: ");
+        Scanner sc = new Scanner(System.in);
+
+        dividendo = sc.nextInt();
+
+        System.out.print("Digite um divisor: ");
+
+        divisor = sc.nextInt();
+        System.out.println("-------------------------------");
+
+        if ((dividendo%divisor) == 0) {
+            System.out.println("O número " + dividendo + " é divisível por " + divisor);
+        } else {
+            System.out.println("O número " + dividendo + " não é divisível por " + divisor);
+        }
+        System.out.println("-------------------------------");
+        sc.close();
+    }
 }
