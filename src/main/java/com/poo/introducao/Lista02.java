@@ -43,8 +43,10 @@ public class Lista02 {
 
         if (num1 > num2) {
             System.out.println("O número " + num1 + " é maior que " + num2);
-        } else {
+        } else if (num2 > num1) {
             System.out.println("O número " + num2 + " é maior que " + num1);
+        } else {
+            System.out.println("Os números são iguais");
         }
         System.out.println("-------------------------------");
         sc.close();
@@ -129,14 +131,74 @@ public class Lista02 {
                 if (senhaCheck.equals(senhaCriada)) {
                     System.out.println("---- Bem-vindo! ----");
                 }
-            }   else {
-                    System.out.println("Login incorreto.");
-                }
+            } else {
+                System.out.println("Login incorreto.");
+            }
             if (!senhaCheck.equals(senhaCriada)) {
                 System.out.println("Senha incorreta.");
             }
+        } while (!senhaCheck.equals(senhaCriada) || !loginCheck.equals(loginCriado));
+        sc.close();
+    }
+
+    void ex6() {
+        String nome;
+        float nota1;
+        float nota2;
+        float media;
+        float notaRec;
+
+        System.out.println("----------------------------------");
+        System.out.print("Digite o nome do aluno: ");
+        Scanner sc = new Scanner(System.in);
+
+        nome = sc.nextLine();
+
+        System.out.println("----------------------------------");
+        System.out.print("Digite a nota do 1º semestre: ");
+
+        nota1 = sc.nextFloat();
+
+        System.out.println("----------------------------------");
+        System.out.print("Digite a nota do 2º semestre: ");
+
+        nota2 = sc.nextFloat();
+
+        media = (nota1 + nota2) / 2;
+
+        System.out.println("----------------------------------");
+        System.out.println("A média do " + nome + " foi: " + media);
+        System.out.println();
+        if (media >= 6) {
+            System.out.println("O aluno está aprovado!");
+        } else {
+            System.out.print("Digite a nota de recuperação: ");
+            notaRec = sc.nextFloat();
+            System.out.println("----------------------------------");
+            if (nota1 > nota2 && notaRec > nota2) {
+                media = (nota1 + notaRec) / 2;
+                if (media >= 6) {
+                    System.out.println("A média do " + nome + " foi: " + media);
+                    System.out.println("O aluno está aprovado!");
+                } else {
+                    System.out.println("A média do " + nome + " foi: " + media);
+                    System.out.println("O aluno está reprovado!");
+                }
+            } else if (nota2 > nota1 && notaRec > nota1) {
+                media = (nota2 + notaRec) / 2;
+                if (media >= 6) {
+                    System.out.println("A média do " + nome + " foi: " + media);
+                    System.out.println("O aluno está aprovado!");
+                } else {
+                    System.out.println("A média do " + nome + " foi: " + media);
+                    System.out.println("O aluno está reprovado!");
+                }
+            } else {
+                System.out.println("A média do " + nome + " foi: " + media);
+                System.out.println("O aluno está reprovado!");
+            }
         }
-        while (!senhaCheck.equals(senhaCriada) || !loginCheck.equals(loginCriado));
+        System.out.println("----------------------------------");
         sc.close();
     }
 }
