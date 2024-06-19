@@ -82,4 +82,22 @@ public class Lista02 {
         }
         sc.close();
     }
+
+    void ex4() {
+        int idade;
+
+        System.out.print("Digite a sua idade: ");
+        Scanner sc = new Scanner(System.in);
+
+        idade = sc.nextInt();
+
+        if (idade<16){
+            System.out.println("Você não pode entrar no evento.");
+        } else if (idade<=18){
+            System.out.println("Você só poderá entrar acomponhado dos responsáveis.");
+        } else {
+            System.out.println(" Pode entrar.");
+        }
+        sc.close();
+    }
 }
