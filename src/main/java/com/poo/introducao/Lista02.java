@@ -202,7 +202,7 @@ public class Lista02 {
         sc.close();
     }
 
-    void ex7(){
+    void ex7() {
         int divisor;
         int dividendo;
 
@@ -219,7 +219,7 @@ public class Lista02 {
         divisor = sc.nextInt();
         System.out.println("-------------------------------");
 
-        if ((dividendo%divisor) == 0) {
+        if ((dividendo % divisor) == 0) {
             System.out.println("O número " + dividendo + " é divisível por " + divisor);
         } else {
             System.out.println("O número " + dividendo + " não é divisível por " + divisor);
@@ -227,4 +227,95 @@ public class Lista02 {
         System.out.println("-------------------------------");
         sc.close();
     }
+
+    void ex8() {
+        String resposta1;
+        String resposta2;
+        String resposta3;
+        String resposta4;
+        String resposta5;
+        int tentativas = 3;
+
+        System.out.println("-------------------");
+        System.out.println("$ Show do Milhão $");
+        System.out.println("-------------------");
+        System.out.println("1) Quem descobriu o Brasil?");
+        System.out.println("a) Américo Vespúcio");
+        System.out.println("b) Pedro Álvares Cabral");
+        System.out.println("c) Cristóvão Colombo");
+        Scanner sc = new Scanner(System.in);
+
+        resposta1 = sc.nextLine();
+
+        if (!resposta1.equals("b")) {
+            tentativas--;
+            System.out.println("Você errou, restam " + tentativas + " tentativas.");
+        }
+
+        System.out.println("-------------------");
+        System.out.println("2) Qual foi o time campeão brasileiro de 1995?");
+        System.out.println("a) Botafogo");
+        System.out.println("b) Cruzeiro");
+        System.out.println("c) Santos");
+
+        resposta2 = sc.nextLine();
+
+        if (!resposta2.equals("a")) {
+            tentativas--;
+            System.out.println("Você errou, restam " + tentativas + " tentativas.");
+        }
+
+        System.out.println("-------------------");
+        System.out.println("3) Qual foi o primeiro homem a ir ao espaço?");
+        System.out.println("a) Buzz Aldrin");
+        System.out.println("b) Neil Armstrong");
+        System.out.println("c) Yuri Gagarin");
+
+        resposta3 = sc.nextLine();
+
+        if (!resposta3.equals("c")) {
+            tentativas--;
+            System.out.println("Você errou, restam " + tentativas + " tentativas.");
+        }
+        if (tentativas == 0) {
+            System.out.println("Suas três tentativas terminaram, você perdeu!");
+        } else {
+            System.out.println("-------------------");
+            System.out.println("4) Qual o maior planeta do sistem solar?");
+            System.out.println("a) Terra");
+            System.out.println("b) Marte");
+            System.out.println("c) Jupíter");
+
+            resposta4 = sc.nextLine();
+
+            if (!resposta4.equals("a")) {
+                tentativas--;
+                System.out.println("Você errou, restam " + tentativas + " tentativas.");
+            }
+            if (tentativas == 0) {
+                System.out.println("Suas três tentativas terminaram, você perdeu!");
+            } else {
+                System.out.println("-------------------");
+                System.out.println("5) Última pergunta. Quem pintou o quadro Monalisa?");
+                System.out.println("a) Leonardo da Vinci");
+                System.out.println("b) Michelangelo");
+                System.out.println("c) Monet");
+
+                resposta5 = sc.nextLine();
+
+                if (!resposta5.equals("a")) {
+                    tentativas--;
+                    System.out.println("Você errou, restam " + tentativas + " tentativas.");
+                }
+                if (tentativas == 0) {
+                    System.out.println("Suas três tentativas terminaram, você perdeu!");
+                } else {
+                    System.out.println("$ Parabéns, você venceu $");
+                    System.out.println("-------------------");
+                }
+            }
+        }
+        sc.close();
+    }
+
 }
