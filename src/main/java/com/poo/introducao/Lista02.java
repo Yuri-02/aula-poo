@@ -91,13 +91,52 @@ public class Lista02 {
 
         idade = sc.nextInt();
 
-        if (idade<16){
+        if (idade < 16) {
             System.out.println("Você não pode entrar no evento.");
-        } else if (idade<=18){
+        } else if (idade <= 18) {
             System.out.println("Você só poderá entrar acomponhado dos responsáveis.");
         } else {
             System.out.println(" Pode entrar.");
         }
+        sc.close();
+    }
+
+    void ex5() {
+        String loginCriado;
+        String senhaCriada;
+        String loginCheck;
+        String senhaCheck;
+
+        System.out.print("Crie um login: ");
+        Scanner sc = new Scanner(System.in);
+
+        loginCriado = sc.nextLine();
+
+        System.out.print("Crie uma senha: ");
+
+        senhaCriada = sc.nextLine();
+        do {
+            System.out.println("-----------------------------");
+            System.out.print("Digite seu login: ");
+
+            loginCheck = sc.nextLine();
+
+            System.out.print("Digite sua senha: ");
+
+            senhaCheck = sc.nextLine();
+
+            if (loginCheck.equals(loginCriado)) {
+                if (senhaCheck.equals(senhaCriada)) {
+                    System.out.println("---- Bem-vindo! ----");
+                }
+            }   else {
+                    System.out.println("Login incorreto.");
+                }
+            if (!senhaCheck.equals(senhaCriada)) {
+                System.out.println("Senha incorreta.");
+            }
+        }
+        while (!senhaCheck.equals(senhaCriada) || !loginCheck.equals(loginCriado));
         sc.close();
     }
 }
