@@ -55,4 +55,16 @@ public class Lista04 {
         System.out.println("A média do valor de vendas do dia foi de: R$ " + media);
         System.out.println("--------------------------------------");
     }
+
+    void ex4(){
+        int[] lista = { 3, 5, 6, 7, 8, 10, 22, 55, 110 };
+        int pares=0;
+
+        for(int i=0; i<9; i++){
+            if(lista[i] % 2 == 0){
+                pares++;
+            }
+        }
+        System.out.println("A quantidades de números pares da lista é: " + pares);
+    }
 }
