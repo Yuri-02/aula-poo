@@ -1,5 +1,6 @@
 package com.poo.introducao;
 
+import java.util.Random;
 import java.util.Scanner;
 //import java.util.Timer;
 //import java.util.TimerTask;
@@ -95,6 +96,42 @@ public class Lista03 {
                     i++;
                 }
                     
+            }
+        }
+        sc.close();
+    }
+
+    void ex4(){
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+
+        int numeroAleatorio = random.nextInt(10);
+        int numeroPalpite;
+        boolean acertou = false;
+        int diferenca;
+
+        while (!acertou){
+            System.out.println("Advinhe o número que estou pensando de 1 a 10: ");
+            numeroPalpite = sc.nextInt();
+
+            diferenca = Math.abs(numeroAleatorio - numeroPalpite);
+
+            if (numeroAleatorio == numeroPalpite){
+                System.out.println("Parabéns, você acertou!");
+                acertou = true;
+            }
+
+            else if (diferenca == 1){
+                System.out.println("Ta quente!!!");
+            }
+            else if (diferenca <= 3){
+                System.out.println("Ta morno!");
+            }
+            else if (diferenca <= 10){
+                System.out.println("Tá frio...");
+            }
+            else {
+                System.out.println("O número secreto está entre 1 e 10.");
             }
         }
         sc.close();
