@@ -8,41 +8,35 @@ public class Lista03 {
     
 
     void ex1(){
-        //final long interval = 1000;
-       // Timer timer = new Timer();
-    //     int tempo;
-    //     System.out.println("-----------");
-    //     System.out.println("Cronômetro");
-    //     System.out.println("-----------");
-    //     System.out.println("Digite um valor de tempo em segundos de 1 a 59");
-    //     Scanner sc = new Scanner(System.in);
+        int num;
+        boolean respostaErrada = true;
 
-    //     tempo = sc.nextInt();
-
+        do {
+            System.out.println("------------------------------------------");
+            System.out.println("--------------- Cronômetro ---------------");
+            System.out.println("------------------------------------------");
+            System.out.print("Digite o tempo de 1 a 60 segundos: ");
+            Scanner sc = new Scanner(System.in);
+            num = sc.nextInt();
     
-            
-            
-    //     for(int i=0; i<tempo; i++){
+            if (num >0 && num <60) {
+                System.out.println("Começando a contagem...");
+                respostaErrada = false;
+                sc.close();  
+            } else {
+                System.out.println("Tempo fora da faixa permitida!");
+            }
+        } while ( respostaErrada );
+         
+        for (int i = num; i >= 0; i--) {
+            System.out.println(i);
 
-        
-            
-    //         Timer timer = new Timer();
-    //         final long interval = 1000;
-    
-    //         TimerTask cronometro = new TimerTask() {
-    //         @Override
-    //         public void run() {
-
-    //         System.out.println("-----------");
-    //         System.out.println(i);
-            
-    //         }
-    //     }; timer.scheduleAtFixedRate(cronometro, 0, interval);
-    // }
-            
-    //         sc.close();
-        
-        
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }  
     }
 
     void ex2(){

@@ -1,4 +1,6 @@
 package com.poo.introducao;
+import java.util.Scanner;
+
 
 public class Lista04 {
 
@@ -66,5 +68,28 @@ public class Lista04 {
             }
         }
         System.out.println("A quantidades de números pares da lista é: " + pares);
+    }
+
+    void ex5(){
+        String[] lista = {"Macarrão", "Biscoito", "Sucrilhos"};
+        int opcao;
+        
+        System.out.println("--------------");
+        System.out.println(("Menu"));
+        System.out.println("--------------");
+        System.out.println("1 - Ver lista");
+        System.out.println("2 - Adicionar item");
+        Scanner sc = new Scanner(System.in);
+
+        opcao = sc.nextInt();
+
+        if(opcao == 1){
+            for(int i=0; i<lista.length; i++)
+            System.out.println(lista[i]);
+        } else {
+            
+        }
+
+        sc.close();
     }
 }
