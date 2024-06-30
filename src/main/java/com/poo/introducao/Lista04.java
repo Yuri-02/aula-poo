@@ -71,25 +71,61 @@ public class Lista04 {
     }
 
     void ex5(){
-        String[] lista = {"Macarrão", "Biscoito", "Sucrilhos"};
-        int opcao;
-        
-        System.out.println("--------------");
-        System.out.println(("Menu"));
-        System.out.println("--------------");
-        System.out.println("1 - Ver lista");
-        System.out.println("2 - Adicionar item");
+        String listaDeCompras[] = new String[100];
+        int escolhaMenu;
+        String item;
+        boolean menu = true;
+        int contador = 0;
         Scanner sc = new Scanner(System.in);
 
-        opcao = sc.nextInt();
+        while (menu) {
+            System.out.println("""
+                    ===== Menu =====
+                     1 = Add item na lista de compras.
+                     2 = Ver lista de compras
+                     3 = Sair
+                    """);
 
-        if(opcao == 1){
-            for(int i=0; i<lista.length; i++)
-            System.out.println(lista[i]);
-        } else {
-            
+            escolhaMenu = sc.nextInt();
+
+            if (escolhaMenu == 1) {
+                if (contador < 100) {
+                    System.out.println("Insira o item que deseja adicionar:");
+
+                    item = sc.next();
+
+                    listaDeCompras[contador] = item;
+                    contador++;
+                    System.out.println("\n\n");
+                } else {
+                    System.out.println("A lista está cheia");
+                }
+            }
+
+            else if (escolhaMenu == 2) {
+
+                if (contador != 0) {
+                    System.out.println("\n\n===== Lista de Compras =====");
+
+                    for (int i = 0; i < contador; i++) {
+                        System.out.println(contador + 1 + " - " + listaDeCompras[i]);
+                    }
+                } else {
+                    System.out.println("\n\nLista de compras vazia");
+                }
+                System.out.println("\n\n");
+            }
+
+            else if (escolhaMenu == 3) {
+                System.out.println("Saindo...");
+                menu = false;
+            }
+
+            else {
+                System.out.println("Digite um número válido! \n\n\n");
+            }
+
         }
-
         sc.close();
     }
 }
