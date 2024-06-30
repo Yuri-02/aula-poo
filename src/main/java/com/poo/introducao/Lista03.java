@@ -136,4 +136,48 @@ public class Lista03 {
         }
         sc.close();
     }
+
+    void ex5(){
+        String loginCheck = "Admin";
+        String tryLogin;
+        String passwordCheck = "1234";
+        String tryPassword;
+        boolean logado = false;
+        int tentativas = 3;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Insira suas credenciais com cautela, com 3 tentativas erradas iremos bloquear seu acesso!");
+        
+        while(!logado && tentativas >0){
+            System.out.println("Insira seu login:");
+            tryLogin = sc.nextLine();
+
+            if (loginCheck.equals(tryLogin)){
+
+                System.out.println("Insira sua senha:");
+                tryPassword = sc.nextLine();
+
+                if (passwordCheck.equals(tryPassword)){
+                    System.out.println("Bem-vindo!");
+                    logado = true;  
+                }
+                else {
+                    System.out.println("Senha incorreta\n\n");
+                    tentativas--;
+                }
+            }
+            else {
+                System.out.println("Login Incorreto\n\n");
+                tentativas--;
+            }
+
+            if (tentativas == 1){
+                System.out.println("Última tentativa!");
+            }  
+            if (tentativas == 0){
+                System.out.println("Acesso Bloqueado.");
+            }   
+        }
+        sc.close();
+    }
 }
