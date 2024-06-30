@@ -180,4 +180,44 @@ public class Lista03 {
         }
         sc.close();
     }
+
+    void ex6(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o número de andares da pirâmide: ");
+        int andares = sc.nextInt();
+
+        // Desenha a pirâmide de asteriscos
+        for (int i = 1; i <= andares; i++) {
+
+            for (int j = 0; j < andares - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 0; k < (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+        sc.close();
+    }
+    
+    void ex7(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite a largura do retângulo: ");
+        int largura = sc.nextInt();
+
+        System.out.print("Digite a altura do retângulo: ");
+        int altura = sc.nextInt();
+
+        // Desenha o retângulo de asteriscos
+        for (int i = 0; i < altura; i++) {
+            for (int j = 0; j < largura; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
 }
